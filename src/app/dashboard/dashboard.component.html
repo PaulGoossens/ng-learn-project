@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>Age</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Company</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let x of rows">
+            <td>{{ x.index }}</td>
+            <td>{{ x.age }}</td>
+            <td>{{ x.name }}</td>
+            <td>{{ x.gender }}</td>
+            <td>{{ x.company }}</td>
+            <td class="py-2">
+              <div class="btn-group" [class.show]="selectedButton === x.index">
+                <button type="button" class="btn btn-primary btn-sm" (click)="onEdit(x.index)">Wijzigen</button>
+                <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" (click)="onCollapseActions(x.index)"></button>
+                <div class="dropdown-menu" [class.show]="selectedButton === x.index">
+                  <a class="dropdown-item" href="#">Betalingen</a>
+                  <a class="dropdown-item" href="#">Betalings overzicht</a>
+                  <a class="dropdown-item" href="#">Uitzonderingen</a>
+                  <a class="dropdown-item" href="#">Info</a>
+                  <a class="dropdown-item" href="#">Uitschrijven</a>
+                  <a class="dropdown-item" href="#">Product</a>
+                  <a class="dropdown-item" href="#">Inschrijven</a>
+                  <a class="dropdown-item" href="#">Contract</a>
+                  <a class="dropdown-item" href="#">Notities</a>
+                  <a class="dropdown-item" href="#">Mailing</a>
+                  <a class="dropdown-item" href="#">Partner</a>
+                  <a class="dropdown-item" href="#">Reservering</a>
+                  <a class="dropdown-item" href="#">Aanwezigheid</a>
+                  <a class="dropdown-item" href="#">Overnemen</a>
+                  <a class="dropdown-item" href="#">Wachtlijst</a>
+                  <a class="dropdown-item" href="#">Historie</a>
+                  <a class="dropdown-item" href="#">Klikschema</a>
+                  <a class="dropdown-item" href="#">Verwijderen</a>
+                  <a class="dropdown-item" href="#">Body support</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- <pre>{{ rows | json }}</pre> -->
